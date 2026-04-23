@@ -8,6 +8,7 @@ const glowSlider = document.getElementById('glow-intensity');
 const widthSlider = document.getElementById('line-width');
 const noiseSlider = document.getElementById('particle-density');
 const fullscreenBtn = document.getElementById('fullscreen-btn');
+const shareBtn = document.getElementById('share-btn');
 
 // Configuration
 let settings = {
@@ -15,6 +16,18 @@ let settings = {
     lineWidth: 3,
     noiseDensity: 30
 };
+
+// Share logic
+if (navigator.share) {
+    shareBtn.style.display = 'flex';
+    shareBtn.onclick = () => {
+        navigator.share({
+            title: 'HandTracking | Neural Synapse',
+            text: 'Check out this real-time neural hand tracking experience!',
+            url: window.location.href
+        }).catch(err => console.log('Error sharing:', err));
+    };
+}
 
 // Fullscreen logic
 fullscreenBtn.onclick = () => {
