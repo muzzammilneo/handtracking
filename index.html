@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowLink | Neural Hand Synapse</title>
+    <meta name="description"
+        content="Experience real-time hand tracking with neural-inspired visual links between fingers. Built with MediaPipe.">
+    <link rel="stylesheet" href="style.css">
+    <!-- MediaPipe Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <p>Initializing Neural Engine...</p>
+    </div>
+
+    <main id="app-container">
+        <div class="video-wrapper">
+            <video id="input-video" playsinline></video>
+            <canvas id="output-canvas"></canvas>
+
+            <div class="overlay-ui">
+                <header class="header">
+                    <div class="title-group">
+                        <h1>Hand Tracking</h1>
+                        <p>Neural Hand Synapse</p>
+                    </div>
+                    <div class="status-badge">
+                        <div id="status-dot" class="status-dot"></div>
+                        <span id="status-text">Camera Off</span>
+                    </div>
+                </header>
+
+                <div class="controls-panel">
+                    <div class="control-item">
+                        <label for="glow-intensity">Glow Intensity</label>
+                        <input type="range" id="glow-intensity" min="5" max="50" value="25">
+                    </div>
+                    <div class="control-item">
+                        <label for="line-width">Synapse Width</label>
+                        <input type="range" id="line-width" min="1" max="10" value="3">
+                    </div>
+                    <div class="control-item">
+                        <label for="particle-density">Neural Noise</label>
+                        <input type="range" id="particle-density" min="0" max="100" value="30">
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions" id="instruction-text">
+                Show both hands to establish neural link
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
