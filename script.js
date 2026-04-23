@@ -7,12 +7,24 @@ const statusText = document.getElementById('status-text');
 const glowSlider = document.getElementById('glow-intensity');
 const widthSlider = document.getElementById('line-width');
 const noiseSlider = document.getElementById('particle-density');
+const fullscreenBtn = document.getElementById('fullscreen-btn');
 
 // Configuration
 let settings = {
     glowIntensity: 25,
     lineWidth: 3,
     noiseDensity: 30
+};
+
+// Fullscreen logic
+fullscreenBtn.onclick = () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
 };
 
 // Update settings from UI

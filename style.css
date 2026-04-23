@@ -129,6 +129,25 @@ body::before {
     letter-spacing: 2px;
 }
 
+.icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    margin-right: 10px;
+    pointer-events: auto;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .status-badge {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
