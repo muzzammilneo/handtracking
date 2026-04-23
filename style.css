@@ -280,3 +280,74 @@ input[type="range"]::-webkit-slider-thumb {
         transform: rotate(360deg);
     }
 }
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    .overlay-ui {
+        padding: 20px;
+    }
+
+    .title-group h1 {
+        font-size: 1.6rem;
+        margin-top: 10px;
+    }
+
+    .title-group p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .video-wrapper {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        aspect-ratio: auto;
+        border: none;
+    }
+
+    .controls-panel {
+        width: calc(100% - 30px);
+        align-self: center;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(15px);
+        margin-bottom: 70px;
+        border-radius: 16px;
+    }
+
+    .status-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+
+    .instructions {
+        width: 85%;
+        text-align: center;
+        font-size: 0.75rem;
+        bottom: 20px;
+        padding: 10px 16px;
+    }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .controls-panel {
+        display: flex;
+        width: auto;
+        max-width: 95vw;
+        gap: 15px;
+        padding: 8px 15px;
+        margin-bottom: 5px;
+    }
+    
+    .control-item {
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+    .title-group {
+        display: none;
+    }
+
+    .instructions {
+        display: none;
+    }
+}

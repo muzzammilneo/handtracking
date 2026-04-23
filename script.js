@@ -181,3 +181,8 @@ camera.start().catch(err => {
     statusDot.style.background = "#ff3b30";
     alert("Please enable camera access to use GlowLink.");
 });
+
+// Handle orientation changes and window resizing
+window.addEventListener('resize', () => {
+    firstResult = true; // Trigger canvas resize on next frame
+});
