@@ -9,12 +9,20 @@ const widthSlider = document.getElementById('line-width');
 const noiseSlider = document.getElementById('particle-density');
 const fullscreenBtn = document.getElementById('fullscreen-btn');
 const shareBtn = document.getElementById('share-btn');
+const toggleControlsBtn = document.getElementById('toggle-controls');
+const controlsPanel = document.querySelector('.controls-panel');
 
 // Configuration
 let settings = {
     glowIntensity: 25,
     lineWidth: 3,
     noiseDensity: 30
+};
+
+// Toggle Controls logic
+toggleControlsBtn.onclick = () => {
+    controlsPanel.classList.toggle('hidden');
+    toggleControlsBtn.classList.toggle('active');
 };
 
 // Share logic

@@ -183,7 +183,18 @@ body::before {
     pointer-events: auto;
     align-self: flex-end;
     margin-bottom: 20px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.controls-panel.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.95);
+}
+
+.icon-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--accent-left);
 }
 
 .control-item {
